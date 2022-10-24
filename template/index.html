@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static   '../static/css/index.css'  %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href= "https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" 
+    rel="stylesheet">
+    <title>CVD Prediction</title>
+
+</head>
+<body>
+
+    <div class="heading">
+        <h1>CVD Prediction</h1>
+        <div class="underline"></div>
+    </div>
+
+    <form class="input-parameters-form">
+
+    {%  csrf_token  %}
+
+    <div class="field">
+        <label for="field1">Age (in yrs)</label>
+        <input type="text" name="age">
+    </div>
+
+    <div class="field">
+        <label for="field2">gender (0- male, 1- female)</label>
+        <input type="text" name="gender">
+    </div>
+
+    <div class="field">
+        <label for="field3">Chest Pain Variety (0 - asyptotic, 
+            1- non-angina pain, 2- typical type angina, 3- typical type)
+             </label>
+        <input type="text" name="cp">
+    </div>
+
+    <div class="field">
+        <label for="field4">Sleeping Blood Force (Continuous value)</label>
+        <input type="text" name="trestbps">
+    </div>
+
+    <div class="field">
+        <label for="field5">Serum Cholesterol (Continuous value)</label>
+        <input type="text" name="chol">
+    </div>
+
+    <div class="field">
+        <label for="field6">Fasting Blood Sugar (0- less than or equal to 120, 
+            1- greater than or equal to 120) </label>
+        <input type="text" name="fbs">
+    </div>
+
+    <div class="field">
+        <label for="field7">Resting ECG (0- left ventricular hypertrophy, 1- having ST_T
+            wave abnormal, 2-normal)
+        </label>
+        <input type="text" name="restecg">
+    </div>
+
+    <div class="field">
+        <label for="field8">Greatest heart speed reached (Continuous value)</label>
+        <input type="text" name="thalch">
+    </div>
+
+    <div class="field">
+        <label for="field9">Number of key vessels painted by fluoroscopy 
+            (0-4 -> value)
+        </label>
+        <input type="text" name="ca">
+    </div>
+
+    <div class="field">
+        <label for="field10">Desert Category (1- normal, 2- fixed, 3- reversible defect)
+
+        </label>
+        <input type="text" name="thal">
+    </div>
+        
+        <div class="field">
+            <input type="submit" value="Predict" class="predict">
+        </div>
+    </form>
+
+        <div class="result">
+            <div class="heading-div">
+            <h3>Message</h3>
+            <div class="underline"></div>
+        </div>
+        <div class="result-box">
+            <p>Nothing to display.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="{% static  '../static/js/script.js'  %}" ></script>
+</body>
+</html>
